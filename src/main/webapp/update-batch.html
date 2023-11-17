@@ -19,14 +19,14 @@
 		<h3>Update Batch</h3>
 
 		<form action="UpdateBatch" method="post">
-			            <!-- Guiding sentence for the user -->
-            <p>Enter BatchName/BatchID to retrieve current values:</p>
-			
+			<!-- Guiding sentence for the user -->
+			<p>Enter BatchName/BatchID to retrieve current values:</p>
+
 			<label for="batchName">Batch Name: </label><br>
 			<input type="text" id="batchName" name="batchName" placeholder="Enter Batch Name"><br>
 			<br>
-			
-				<label for="batchId">Batch ID: </label><br>
+
+			<label for="batchId">Batch ID: </label><br>
 			<input type="text" id="batchId" name="batchId" placeholder="Enter Batch ID"><br>
 			<br>
 
@@ -35,11 +35,12 @@
 			</div>
 
 			<script>
-				// Add an event listener to the batchId input
-				document.getElementById('batchId').addEventListener('input', function () {
-					// Get the entered batch ID
-					var batchId = this.value;
-					var batchName = document.getElementById('batchName').value;
+				window.onload = function () {
+					// Add an event listener to the batchId input
+					document.getElementById('batchId').addEventListener('input', function () {
+						// Get the entered batch ID
+						var batchId = this.value;
+						var batchName = document.getElementById('batchName').value;
 
 						// Make an AJAX request to fetch batch details
 						var xhr = new XMLHttpRequest();
@@ -51,9 +52,9 @@
 						};
 						xhr.open('GET', 'FetchBatchDetails.jsp?batchId=' + batchId + '&batchName=' + batchName, true);
 						xhr.send();
-				});
+					});
+				};
 			</script>
-
 
 			<br>
 		</form>

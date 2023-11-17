@@ -30,22 +30,24 @@
 			</div>
 
 			<script>
-				// Add an event listener to the participantId input
-				document.getElementById('participantId').addEventListener('input', function () {
-					// Get the entered participant ID
-					var participantId = this.value;
+				window.onload = function () {
+					// Add an event listener to the participantId input
+					document.getElementById('participantId').addEventListener('input', function () {
+						// Get the entered participant ID
+						var participantId = this.value;
 
-					// Make an AJAX request to fetch participant details
-					var xhr = new XMLHttpRequest();
-					xhr.onreadystatechange = function () {
-						if (xhr.readyState == 4 && xhr.status == 200) {
-							// Update the participantDetails div with the response
-							document.getElementById('participantDetails').innerHTML = xhr.responseText;
-						}
-					};
-					xhr.open('GET', 'FetchParticipantDetails.jsp?participantId=' + participantId, true);
-					xhr.send();
-				});
+						// Make an AJAX request to fetch participant details
+						var xhr = new XMLHttpRequest();
+						xhr.onreadystatechange = function () {
+							if (xhr.readyState == 4 && xhr.status == 200) {
+								// Update the participantDetails div with the response
+								document.getElementById('participantDetails').innerHTML = xhr.responseText;
+							}
+						};
+						xhr.open('GET', 'FetchParticipantDetails.jsp?participantId=' + participantId, true);
+						xhr.send();
+					});
+				};
 			</script>
 
 			<br>
