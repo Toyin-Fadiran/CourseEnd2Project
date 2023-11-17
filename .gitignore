@@ -1,0 +1,38 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Maven
+target/
+*.iml
+
+# Compiled Java
+*.class
+
+# Logs
+log/
+*.log
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# IDE-specific files
+.idea/
+*.suo
+*.user
+*.sln
+*.suo
+*.user
+*.sln
+*.userprefs
+*.classpath
+*.project
+*.settings/
+*.vscode/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
