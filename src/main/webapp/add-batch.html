@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Add Batch</title>
+	<style>
+		.center {
+			margin: auto;
+			width: 60%;
+			border: 3px solid #2222FF;
+			padding: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="center">
+		<h3>Add new Batch</h3>
+		<form action="AddBatch" method="post">
+			<label for="batchName">Batch Name: </label><br>
+			<select id="batchName" name="batchName">
+				<option value="FusionZumba">Fusion Zumba</option>
+				<option value="BeatsZumba">Beats Zumba</option>
+				<option value="KidsZumba">Kids Zumba</option>
+				<!-- Add more options as needed -->
+			</select><br><br>
+
+			<label for="batchInstructor">Batch Instructor: </label><br>
+			<input type="text" id="batchInstructor" name="batchInstructor" placeholder="Instructor Name"><br><br>
+
+			<label for="batchDuration">Batch Duration: </label><br>
+			<select id="batchDuration" name="batchDuration">
+				<option value="30">30 minutes</option>
+				<option value="45">45 minutes</option>
+				<option value="60">60 minutes</option>
+			</select><br><br>
+
+			<label for="bid">Batch ID: </label><br>
+			<input type="text" id="bid" name="bid" placeholder="Enter Batch ID"><br><br>
+
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+</body>
+
+</html>

@@ -20,4 +20,26 @@
     <url-pattern>/ParticipantControllerServlet</url-pattern>
     <url-pattern>/ParticipantController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ParticipantUpdateServlet</display-name>
+    <servlet-name>ParticipantUpdateServlet</servlet-name>
+    <servlet-class>com.example.ZumbaRegistry.controller.ParticipantUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ParticipantUpdateServlet</servlet-name>
+    <url-pattern>/ParticipantUpdateServlet</url-pattern>
+    <url-pattern>/UpdateParticipant</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BatchControllerServlet</display-name>
+    <servlet-name>BatchControllerServlet</servlet-name>
+    <servlet-class>com.example.ZumbaRegistry.controller.BatchControllerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BatchControllerServlet</servlet-name>
+    <url-pattern>/BatchControllerServlet</url-pattern>
+    <url-pattern>/AddBatch</url-pattern>
+  </servlet-mapping>
 </web-app>

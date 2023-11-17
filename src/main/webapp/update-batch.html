@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Update Batch</title>
+	<style>
+		.center {
+			margin: auto;
+			width: 60%;
+			border: 3px solid #2222FF;
+			padding: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="center">
+		<h3>Update Batch</h3>
+
+		<form action="UpdateBatch" method="post">
+			            <!-- Guiding sentence for the user -->
+            <p>Enter BatchName/BatchID to retrieve current values:</p>
+			
+			<label for="batchName">Batch Name: </label><br>
+			<input type="text" id="batchName" name="batchName" placeholder="Enter Batch Name"><br>
+			<br>
+			
+				<label for="batchId">Batch ID: </label><br>
+			<input type="text" id="batchId" name="batchId" placeholder="Enter Batch ID"><br>
+			<br>
+
+			<div id="batchDetails">
+				<!-- Existing batch details will be displayed here -->
+			</div>
+
+			<script>
+				// Add an event listener to the batchId input
+				document.getElementById('batchId').addEventListener('input', function () {
+					// Get the entered batch ID
+					var batchId = this.value;
+					var batchName = document.getElementById('batchName').value;
+
+						// Make an AJAX request to fetch batch details
+						var xhr = new XMLHttpRequest();
+						xhr.onreadystatechange = function () {
+							if (xhr.readyState == 4 && xhr.status == 200) {
+								// Update the batchDetails div with the response
+								document.getElementById('batchDetails').innerHTML = xhr.responseText;
+							}
+						};
+						xhr.open('GET', 'FetchBatchDetails.jsp?batchId=' + batchId + '&batchName=' + batchName, true);
+						xhr.send();
+				});
+			</script>
+
+
+			<br>
+		</form>
+
+	</div>
+</body>
+
+</html>

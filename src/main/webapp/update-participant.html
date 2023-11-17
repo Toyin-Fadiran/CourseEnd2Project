@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Update Participant</title>
+	<style>
+		.center {
+			margin: auto;
+			width: 60%;
+			border: 3px solid #2222FF;
+			padding: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="center">
+		<h3>Update Participant</h3>
+
+		<form action="UpdateParticipant" method="post">
+			<!-- Guiding sentence for the user -->
+			<p>Enter Participant ID to retrieve current values:</p>
+			<label for="participantId">Participant ID: </label><br>
+			<input type="text" id="participantId" name="participantId" placeholder="Enter Participant ID"><br>
+			<br>
+
+			<div id="participantDetails">
+				<!-- Existing participant details will be displayed here -->
+			</div>
+
+			<script>
+				// Add an event listener to the participantId input
+				document.getElementById('participantId').addEventListener('input', function () {
+					// Get the entered participant ID
+					var participantId = this.value;
+
+					// Make an AJAX request to fetch participant details
+					var xhr = new XMLHttpRequest();
+					xhr.onreadystatechange = function () {
+						if (xhr.readyState == 4 && xhr.status == 200) {
+							// Update the participantDetails div with the response
+							document.getElementById('participantDetails').innerHTML = xhr.responseText;
+						}
+					};
+					xhr.open('GET', 'FetchParticipantDetails.jsp?participantId=' + participantId, true);
+					xhr.send();
+				});
+			</script>
+
+			<br>
+		</form>
+
+	</div>
+</body>
+
+</html>

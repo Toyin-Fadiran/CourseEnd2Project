@@ -74,7 +74,6 @@ public class ParticipantControllerServlet extends HttpServlet {
 	        try (ResultSet resultSet = db.executeQuery(ps)) {
 	            if (resultSet.next()) {
 	                // Set the batch ID in the participant object
-	            System.out.println("sanity check: " +	resultSet.getInt("bid"));
 	                participant.setBid(resultSet.getInt("bid"));
 	            } else {
 	                // Handle the case where no rows were found
@@ -96,7 +95,6 @@ public class ParticipantControllerServlet extends HttpServlet {
 	        ps.setString(2, participant.getPhone());
 	        ps.setString(3, participant.getEmail());
 	        ps.setString(4, participant.getBatchName());
-	        System.out.println("sanityChk2" + participant.getBid());
 	        ps.setInt(5, participant.getBid());
 
 	        // Execute the update
