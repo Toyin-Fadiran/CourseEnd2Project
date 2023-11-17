@@ -3,11 +3,6 @@
   <display-name>ZumbaRegistry</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-    <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
   <servlet>
     <description></description>
@@ -41,5 +36,16 @@
     <servlet-name>BatchControllerServlet</servlet-name>
     <url-pattern>/BatchControllerServlet</url-pattern>
     <url-pattern>/AddBatch</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BatchUpdateServlet</display-name>
+    <servlet-name>BatchUpdateServlet</servlet-name>
+    <servlet-class>com.example.ZumbaRegistry.controller.BatchUpdateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BatchUpdateServlet</servlet-name>
+    <url-pattern>/BatchUpdateServlet</url-pattern>
+    <url-pattern>/UpdateBatch</url-pattern>
   </servlet-mapping>
 </web-app>
