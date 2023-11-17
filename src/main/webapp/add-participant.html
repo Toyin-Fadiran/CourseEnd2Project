@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Add Participant</title>
+	<style>
+		.center {
+			margin: auto;
+			width: 60%;
+			border: 3px solid #2222FF;
+			padding: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="center">
+		<h3>Add new Participant</h3>
+		<form action="ParticipantController" method="post">
+			<label for="name">Full Name: </label><br>
+			<input type="text" id="name" name="name" placeholder="John Watson"><br>
+
+			<label for="phone">Phone: </label><br>
+			<input type="text" id="phone" name="phone" placeholder="310-945-3758"><br><br>
+
+			<label for="email">Email: </label><br>
+			<input type="text" id="email" name="email" placeholder="john@example.com"><br><br>
+
+			<label for="batchname">Batch Name: </label><br>
+			<select id="batchname" name="batchname">
+				<option value="AquaZumba">Aqua Zumba</option>
+				<option value="ChairZumba">Chair Zumba</option>
+				<option value="ToneZumba">Tone Zumba</option>
+				<!-- Add more options as needed -->
+			</select><br><br>
+
+			<input type="submit" value="Submit">
+		</form>
+
+	</div>
+</body>
+
+</html>

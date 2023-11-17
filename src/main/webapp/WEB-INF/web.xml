@@ -9,4 +9,15 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>ParticipantControllerServlet</display-name>
+    <servlet-name>ParticipantControllerServlet</servlet-name>
+    <servlet-class>com.example.ZumbaRegistry.controller.ParticipantControllerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ParticipantControllerServlet</servlet-name>
+    <url-pattern>/ParticipantControllerServlet</url-pattern>
+    <url-pattern>/ParticipantController</url-pattern>
+  </servlet-mapping>
 </web-app>
